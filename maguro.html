@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>マグロ</title>
+    <style>
+    body   {background : black;
+        border : dotted 10px chartreuse
+        }
+
+        p {
+                color : white;
+            }
+    </style>
+</head>
+<body>
+        <form name="Sample4_form" action="form_sample4.html">
+                <select name="drop" id="drop">
+                        <option value=""/>---寿司ネタを選択してください---</option>
+                    <option value="maguro.html"/>マグロ</option>
+                    <option value="sarmon.html"/>サーモン</option>
+                    <option value="egg.html"/>たまご</option>
+                </select>
+            </form>
+
+            <p>あなたが選択したのはマグロです</p>
+        
+    <img src = "BANNER-IG-Maguro-Donya-Eat-at-Seven-Suntec-2296.jpg" width=100% height=600px; />
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('drop').addEventListener('change',function() {
+            location.href = this.value;
+        });
+    });
+    </script>
+</body>
+</html>
