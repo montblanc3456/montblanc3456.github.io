@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>タイマー</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+        h1{
+            color: #E71D36;
+            font-size:50px;
+            font-family: 'Bangers', cursive;
+        }
+
+        p{
+            color: #E71D36;
+            font-size:40px;
+            font-family: 'Bangers', cursive;
+        }
+
+    body{
+        background-image: url("giphy (1).gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>TAIMER</h1>
+            <form name="Sample4_form" action="form_sample4.html">
+                    <select name="drop" id ="drop">
+                            <option value=""/>---選択してください---</option>
+                        <option value="maguro.html"/>マグロ</option>
+                        <option value="sarmon.html"/>サーモン</option>
+                        <option value="egg.html"/>たまご</option>
+                        <option value="Git.html"/>githubの使い方</option>
+                        <option value="image.html"/>お気に入りの画像集</option>
+                        <option value="showUserArgent.html"/>ブラウザの判定</option>
+                        <option value="timer.html"/>タイマー</option>
+                        <option value="windowsetumei.html"/>メソッドの使い方</option>
+                        <option value="objectsetumei.html"/>consoleオブジェクト</option>
+                    </select>
+                </form>
+    <br><form name="timer">
+        <input type="text" value="" size="3">分
+        <input type="text" value="" size="3">秒<br>
+        <input type="button" value="START" onclick="cntStart()"style="HEIGHT: 100px; WIDTH: 100px; background-color:#f9c00c; color:white;">
+        <input type="button" value="STOP" onclick="cntStop()" style="HEIGHT: 100px; WIDTH: 100px;  background-color:#75D701; color:white;" >
+    </form>
+
+    <p>Let's use a timer!</p>
+
+    </center>
+    
+    <script>
+        //タイマーID宣言
+        var timerdown;
+
+        // カウントダウン関数
+        function cntStart(){
+            document.timer.elements[2].disabled=true;
+            timerdown=setInterval("countDown()",1000);
+        }
+
+        // タイマー停止関数
+        function cntStop(){
+            document.timer.elements[2].disabled=false;
+            clearInterval(timerdown);
+        }
+
+        // カウントダウン関数
+        function countDown() {
+        var min=document.timer.elements[0].value;
+        var sec=document.timer.elements[1].value;
+
+        if((min=="") && (sec=="")){
+            window.alert("PLEASE SET!");
+            reSet();
+        }
+        else{
+            if(min=="") min=0;
+            min=parseInt(min);
+
+            if(sec=="") min=0;
+            sec=parseInt(sec);
+
+            tmWrite(min*60+sec-1);
+        }
+    }
+    
+    // 残り時間を書き出す関数
+    function tmWrite(int){
+    imt=parseInt(int);
+
+    if(int<=0){
+        reSet();
+        window.alert("TIME OUT!");
+    }
+    else{
+        //  残り分数はintを60で割って切り捨てる
+        document.timer.elements[0].value=Math.floor(int/60);
+        //  残り秒数はintを60で割った余り
+        document.timer.elements[1].value=int % 60;
+        }
+    }
+
+    // フォームを初期状態に戻す(リセット)関数
+    function reSet(){
+        document.timer.elements[0].value="0";
+        document.timer.elements[1].value="0";
+        document.timer.elements[2].disablead=false;
+        clearInterval(timerdown);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('drop').addEventListener('change',function() {
+            location.href = this.value;
+        });
+    });
+</script>
+</body>
+</html>

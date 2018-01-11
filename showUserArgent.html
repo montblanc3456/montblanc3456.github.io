@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ブラウザの判定</title>     
+    <style>
+    h1 {
+        color: #56A902;/*文字色*/
+        padding: 0.5em 0;/*上下の余白*/
+        border-top: solid 3px #56A902;/*上線*/
+        border-bottom: solid 3px #56A902;/*下線*/
+        }
+
+        h2 {
+            color: #56A902;/*文字色*/
+            border: solid 3px #56A902;/*線色*/
+            padding: 0.5em;/*文字周りの余白*/
+            border-radius: 0.5em;/*角丸*/
+            font-size:20px;
+            width:200px;
+            }
+    </style> 
+</head>
+<body>
+        <form name="Sample4_form" action="form_sample4.html">
+                <select name="drop" id ="drop">
+                        <option value=""/>---選択してください---</option>
+                    <option value="maguro.html"/>マグロ</option>
+                    <option value="sarmon.html"/>サーモン</option>
+                    <option value="egg.html"/>たまご</option>
+                    <option value="Git.html"/>githubの使い方</option>
+                    <option value="image.html"/>お気に入りの画像集</option>
+                    <option value="showUserArgent.html"/>ブラウザの判定</option>
+                    <option value="timer.html"/>タイマー</option>
+                    <option value="windowsetumei.html"/>メソッドの使い方</option>
+                    <option value="objectsetumei.html"/>consoleオブジェクト</option>
+                </select>
+            </form>
+
+            <center><h1>ブラウザ判定</h1></center>
+        
+            </br>
+            <p id="userAgent"></p>
+        
+            <h2>お使いのブラウザ</h2>
+            <script>
+        
+                var nvName = navigator.appName;
+                var nvVersion = navigator.appVersion;
+                var nvUsAgent = navigator.userAgent;
+        
+                //１．Internet Explorerか調べる
+                if (nvName.indexOf("Internet Explorer") > -1) {
+                    document.write("Internet Explorer");
+                }
+                else {
+                    //２．Operaか調べる
+                    if (nvName.indexOf("Opera") > -1) {
+                        document.write("Opera");
+                    }
+                    else {
+                        //３．「Safari」が含まれるか調べる
+                        if (nvVersion.indexOf("Safari") > -1) {
+                            //４．SafariかChromeを見分ける
+                            if (nvVersion.indexOf("Chrome") > -1) {
+                                document.write("Google Chrome");
+                            }
+                            else {
+                                document.write("Safari");
+                            }
+                        }
+                        else {
+                            //５．FireFoxかその他のブラウザかを見分ける
+                            if (nvUsAgent.indexOf("Firefox") > -1) {
+                                document.write("FireFox");
+                            }
+                            else {
+                                document.write("その他のブラウザ");
+                            }
+                        }
+                    }
+                }
+               
+        
+            </script>
+            <br>
+            <br>
+            <h2>お使いのバージョン</h2>
+            <span id="appVersion"></span>
+
+            <script>
+                    document.getElementById("appVersion").innerHTML = navigator.appVersion;
+                </script>
+
+    <script>
+                document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('drop').addEventListener('change',function() {
+            location.href = this.value;
+        });
+    });
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>メソッドの使い方</title>
+    <style>
+    #choi{
+        font-size:20px;
+        color: red;
+        }
+
+    h1 {
+     color: #364e96;/*文字色*/
+     padding: 0.5em 0;/*上下の余白*/
+     border-top: solid 3px #364e96;/*上線*/
+     border-bottom: solid 3px #364e96;/*下線*/
+      }
+
+    h2{
+    position: relative;
+    padding: 0.2em 0.5em;
+    background: -moz-linear-gradient(to right, #75D701, #fbd14b);
+    background: -webkit-linear-gradient(to right,#75D701, #fbd14b);
+    background: linear-gradient(to right, #75D701, #fbd14b);
+    color: white;
+    font-weight: lighter;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.56);
+      }
+
+    h3 {
+      border-left: solid 10px;
+      border-left-color: blue;
+      background: black;
+      color: #3ac569;
+      width: 1100px;
+      padding-left: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    h4 {
+    color: #364e96;/*文字色*/
+    border: solid 3px #364e96;/*線色*/
+    padding: 0.5em;/*文字周りの余白*/
+    border-radius: 0.5em;/*角丸*/
+    width:50px;
+    font-size:25px;
+        }
+    
+    h5{
+        color: #364e96;/*文字色*/
+    border: solid 3px #364e96;/*線色*/
+    padding: 0.5em;/*文字周りの余白*/
+    border-radius: 0.5em;/*角丸*/
+    width:100px;
+    font-size:25px;
+    }
+    </style>
+</head>
+<body>
+    <form name="Sample4_form" action="form_sample4.html">
+        <select name="drop" id ="drop">
+                <option value=""/>---選択してください---</option>
+            <option value="maguro.html"/>マグロ</option>
+            <option value="sarmon.html"/>サーモン</option>
+            <option value="egg.html"/>たまご</option>
+            <option value="Git.html"/>githubの使い方</option>
+            <option value="image.html"/>お気に入りの画像集</option>
+            <option value="showUserArgent.html"/>ブラウザの判定</option>
+            <option value="timer.html"/>タイマー</option>
+            <option value="windowsetumei.html"/>メソッドの使い方</option>
+            <option value="objectsetumei.html"/>consoleオブジェクト</option>
+        </select>
+    </form>
+
+    <center><h1>メソッドの使い方</h1></center>
+    <p>ここではwindow.open() close() focus() の説明をしていきたいと思います！</p>
+    <h2>window.open()</h2>
+    <h4>構文</h4>
+    <pre>
+        <h3>
+                var win = window.open(url, name [, features]);
+        </h3>
+    </pre>
+    <p id="choi">window.open( URL, ウィンドウ名 [,オプション] )</p>
+    <h4>説明</h4>
+    <p>window.open( url, name, features )は新しい副ブラウザウィンドウを生成し、参照されているリソースをロードします。
+        <br>第２引数「name」に指定したウィンドウやフレームに、第１引数「URL」に指定したドキュメントを読み込むメソッドです。
+        <br>第３引数「features」にウィンドウの表示スタイルを指定できます。</p>
+    <h4>引数</h4>
+    <P id="choi">url</P>
+    <p>新たに開くウィンドウで読み込むドキュメントのURLを指定。
+    <br>指定しない場合、「about:blank」の新たなウィンドウを開く。</p>
+    <p id="choi">name</p>
+    <p>_blankや_selfなどのターゲット属性値か、ウィンドウ名を指定する。
+        <br>(_blank：新規ウィンドウにドキュメントを読み込む。)
+        <br>(_self：現在のフレーム、もしくは、現在のウィンドウにドキュメントを読み込む。)などなど</p>
+    <p id="choi">features</p>
+    <p>新たに開くウィンドウの表示スタイルを指定。カンマ区切りで複数指定できる。</p>
+    <p>ほかにも様々な引数があります。</p>
+    <h5>サンプル</h5>
+    <p>ボタンをクリックすると別ウィンドウが開くようにしてみました。
+    <br>今回はお気に入りの画像集が開くように設定してあります。</p>
+    <form>
+            <input type="button" value="お気に入りの画像集" onclick="window.open('https://montblanc3456.github.io/image.html')"> 
+    </form>
+    <p>コードはこんな感じでやってみました。</p>
+    <pre>
+    <h3>
+            &lt;form><br>
+            &lt;input type="button" value="お気に入りの画像集" onclick="window.open('https://montblanc3456.github.io/image.html')"><br>
+            &lt;/form><br>
+    </h3>
+    </pre>
+
+    <h2>window.close()</h2>
+    <h4>構文</h4>
+    <pre>
+        <h3>
+                window.close();
+        </h3>
+    </pre>
+    <h4>説明</h4>
+    <p>window.close()はウィンドウを閉じるメソッドです。</p>
+    <h5>サンプル</h5>
+    <p>サンプルで試してみましょう。</p>
+    <form>        
+                <input type="button" value="サンプル" onclick="subwindow1()">
+     </form>
+     <p>コードはこんな感じです。</p>
+     <pre>
+         <h3>
+                &lt;input type="button" value="サンプルを閉じる" onclick="window.close()">
+         </h3>
+     </pre>
+
+     <h2>window.focus()</h2>
+     <h4>説明</h4>
+     <p>focusメソッドは、指定したウィンドウにフォーカスをあてます。
+        <br>ウィンドウが重なっている場合には、指定したウィンドウが前面へ移動します。</p>
+    <h5>サンプル</h5>
+    <p>サンプルで確かめてみましょう。</p>
+    <script>
+            function sampleOpenWindow() {
+                sampleWindow = window.open('samplef.html', 'sample', 'width=300,height=300');
+                sampleWindow.focus();
+            }
+        </script>
+    <div class="sample">
+            <button onclick="sampleOpenWindow()">サンプル</button>
+        </div>
+ <p>コードはこんな感じです。</p>
+    <p id="choi">JavaScriptの場合</p>
+    <pre>
+        <h3>
+                &lt;function sampleOpenWindow() {
+                    sampleWindow = window.open( 'samplef.html', 'sample', 'width=300,height=300' );
+                    sampleWindow.focus();}
+                &lt;/script>
+        </h3>
+    </pre>
+    <p id="choi">HTMLの場合</p>
+    <pre>
+        <h3>
+                &lt;div class="sample">
+                &lt;button onclick="sampleOpenWindow()">サンプル&lt;/button>
+                &lt;/div>
+        </h3>
+    </pre>
+    
+    </center>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('drop').addEventListener('change',function() {
+            location.href = this.value;
+        });
+    });
+
+    function subwindow1() {
+      window.open('sampleoc.html', 'sub', 'width=400, height=300,');
+    }
+
+    
+    </script>
+    </body>
+</html>

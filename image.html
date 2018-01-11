@@ -38,16 +38,16 @@
                 // 画像srcを変更
                 switch(imageIndex) {
                     case 0:
-                        imageSrc = "images (1).jpg";
+                        imageSrc = "baseball2.png";
                         break;
                     case 1:
-                        imageSrc = "images (2).jpg";
+                        imageSrc = "baseball3.png";
                         break;
                     case 2:
-                        imageSrc = "images (3).jpg";
+                        imageSrc = "baseball4.png";
                         break;
                     case 3:
-                        imageSrc = "images.jpg";
+                        imageSrc = "baseball5.png";
                         break;
                 }
                 document.getElementById("image").src = imageSrc;
@@ -65,16 +65,20 @@
         <body>
                 <form name="Sample4_form" action="form_sample4.html">
                         <select name="drop" id ="drop">
-                                <option value=""/>---寿司ネタを選択してください---</option>
+                                <option value=""/>---選択してください---</option>
                             <option value="maguro.html"/>マグロ</option>
                             <option value="sarmon.html"/>サーモン</option>
                             <option value="egg.html"/>たまご</option>
                             <option value="Git.html"/>githubの使い方</option>
                             <option value="image.html"/>お気に入りの画像集</option>
+                            <option value="showUserArgent.html"/>ブラウザの判定</option>
+                            <option value="timer.html"/>タイマー</option>
+                            <option value="windowsetumei.html"/>メソッドの使い方</option>
+                            <option value="objectsetumei.html"/>consoleオブジェクト</option>
                         </select>
                     </form>
 
         <button>画像を変更</button>
-        <p><img id ="image" src="images (1).jpg" alt="フリー素材" /></p>
+        <p><img id ="image" src="baseball2.png" alt="フリー素材" /></p>
         </body>
         </html>
