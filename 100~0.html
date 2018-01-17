@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100から5単位で0まで続く選択肢</title>
+</head>
+<body>
+    <p>100から5単位で0まで続く選択肢</p>
+        <form>
+            <select>
+                <option>-選択してください-</option>
+                <script>
+                  var num;
+                  for(num = 100; num >= 0; num -= 5) {
+                    document.write('<option value="'+num+'">'+num+'個</option>');
+                  }
+                </script>
+              </select>
+        </form>
+        
+</body>
+</html>
