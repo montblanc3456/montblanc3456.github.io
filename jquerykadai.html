@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jquery</title>
+  <style>
+    h1 {
+border-bottom: solid 3px yellowgreen;
+color: yellowgreen;
+font-size:40px;
+}
+  .toTop {
+  margin-top: 400px;
+  display: inline-block;
+  background: #0bd;
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+body {
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Meiryo,"メイリオ",Helvetica,Sans-Serif;
+}
+.oo{
+  color:black;
+  font-size: 30px;
+}
+table { background: black; }
+tr { background: #fff; }
+td { padding: 5px; }
+.odd { background: red; }
+
+.deleteBox {
+  border: #ccc 1px solid;
+  padding: 10px;
+}
+.deleteBox .delete {
+  cursor: pointer;
+  color: #0bd;
+  margin-top:10px;
+}
+body {
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Meiryo,"メイリオ",Helvetica,Sans-Serif;
+}
+</style>
+</head>
+<body>
+  <h1>jquery1つ目</h1>
+
+  <p class="oo">開いているページのトップへスルスルとジャンプします！
+    <br>下の紙飛行機の男の子をクリックしてください。
+    <br>上の寝てる男の子へジャンプします！
+  </p>
+
+    <p><img src="寝てる.png"></p>
+    <p class="toTop"><img src="飛ぶ.png"></p><p class="oo">あいつに届け～</p>
+
+    <h1>jquery2つ目</h1>
+
+    <table>
+        <tr>
+          <td>こんな感じで</td>
+          <td>奇数の行に</td>
+        </tr>
+        <tr>
+          <td>色が</td>
+          <td>つきます。</td>
+        </tr><tr>
+          <td>これで</td>
+          <td>今どこを</td>
+        </tr>
+        <tr>
+          <td>見ているか</td>
+          <td>わかりやすい！</td>
+        </tr>
+      </table>
+
+      <p class="oo">長いテーブルの場合、どこの行を見ているかわかりにくくなるので、背景に色をつけることで見やすくすることが出来る！</p>
+
+      <h1>jquery3つ目</h1>
+
+      <p class="oo">魔法使いをクリックすることで言葉が消えるよ！
+        <br>クリックして消してみよう！
+      </p>
+
+      <div class="deleteBox">
+          <p>エラーメッセージ表示時に便利かも！</p>
+          <p class="delete"><img src="消す.png"></p>
+        </div>
+
+        <p>引用元:<a href="https://www.webcreatorbox.com/tech/jquery-tips20">https://www.webcreatorbox.com/tech/jquery-tips20</a></p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  
+  <script>
+      $(function(){
+        $('.toTop').click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          }, 800);
+          return false;
+        });
+      });
+    </script>
+
+    <script>
+    $(function(){
+    $("tr:even").addClass("odd");
+});
+</script>
+
+<script>$(function () {
+  $(".deleteBox .delete").click(function(){
+      $(this).parents(".deleteBox").animate({ opacity: "hide" }, "slow"); 
+  });
+});
+</script>
+</body>
+</html>
